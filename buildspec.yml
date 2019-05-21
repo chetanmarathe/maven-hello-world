@@ -4,10 +4,11 @@ phases:
   install:
     runtime-versions:
       java: openjdk8
-  post_build:
+  build:
     commands:
+      - java -version
       - mvn package
-      - mv webapp/target/webapp.war webapp.war
 artifacts:
   files:
-    - webapp.war
+    - '**/*'
+  base-directory: 'webapp/target'
