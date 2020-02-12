@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: mavenpro 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mavenpro 
+    spec:
+      containers:
+        - name: mavenpro 
+          image: azwebapp.azurecr.io/mavenpro
+          ports:
+          - containerPort: 80
